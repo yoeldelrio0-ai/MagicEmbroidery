@@ -515,6 +515,94 @@
       transition: border-color 0.2s, color 0.2s;
     }
     .footer-socials a:hover { border-color: #fff; color: #fff; }
+
+    /* ─── RESPONSIVE ─── */
+
+    /* Tablet: ≤ 1024px */
+    @media (max-width: 1024px) {
+      .nav-links { gap: 2rem; }
+      .nav-links a { font-size: 1.3rem; }
+      .hero h1 { font-size: 4.8rem; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .big-small-inner { gap: 4rem; }
+      .quality-inner,
+      .merch-inner { gap: 5.6rem; }
+      .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3.2rem; }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+
+    /* Mobile: ≤ 767px */
+    @media (max-width: 767px) {
+      /* Nav */
+      .nav-inner { padding: 0 2rem; height: 6.4rem; }
+      .nav-links { display: none; }
+      .nav-phone span { display: none; }
+
+      /* Hero */
+      .hero { min-height: auto; }
+      .hero-inner { padding: 6rem 2rem; }
+      .hero h1 { font-size: 3.8rem; }
+      .hero p { font-size: 1.6rem; margin-bottom: 2.8rem; }
+      .hero-stats { gap: 3.2rem; margin-top: 4rem; }
+      .stat-num { font-size: 2.8rem; }
+      .hero-triangle-bg { display: none; }
+
+      /* Trusted */
+      .trusted { padding: 4.8rem 2rem; }
+      .trusted-logos { gap: 3.2rem; }
+
+      /* Services */
+      .services { padding: 6rem 2rem; }
+      .services-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .section-title { font-size: 2.6rem; }
+      .section-sub { font-size: 1.5rem; margin-bottom: 4rem; }
+      .service-card { padding: 3.2rem 2.4rem; }
+
+      /* Big/Small */
+      .big-small { padding: 6rem 2rem; }
+      .big-small-inner { grid-template-columns: 1fr; gap: 3.2rem; }
+      .big-box { padding: 4rem 3.2rem; }
+      .big-box h2 { font-size: 2.8rem; }
+      .small-text h2 { font-size: 2.8rem; }
+
+      /* Quality */
+      .quality { padding: 6rem 2rem; }
+      .quality-inner { grid-template-columns: 1fr; gap: 4rem; }
+      .quality-text h2 { font-size: 2.6rem; }
+
+      /* Banner */
+      .blue-banner { padding: 6rem 2rem; }
+      .blue-banner h2 { font-size: 3.2rem; margin-bottom: 3.2rem; }
+
+      /* Merch */
+      .merch { padding: 6rem 2rem; }
+      .merch-inner { grid-template-columns: 1fr; gap: 4rem; }
+      .merch-text h2 { font-size: 2.6rem; }
+
+      /* Footer */
+      .site-footer { padding: 5.6rem 2rem 3.2rem; }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+      }
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+      }
+    }
+
+    /* Small mobile: ≤ 480px */
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 3.2rem; }
+      .hero-stats { flex-direction: column; gap: 2.4rem; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .blue-banner h2 { font-size: 2.6rem; }
+      .btn-outline-white { padding: 1.6rem 3.2rem; }
+    }
   </style>
 </head>
 <body>
