@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magic Embroidery — Crafted with Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-black':   '#1A1A1A',
+            'brand-gold':    '#C4973A',
+            'brand-gold-dk': '#A37A26',
+            'brand-charcoal':'#4B4B4B',
+            'brand-steel':   '#8B8B8B',
+            'brand-cream':   '#F5F0E4',
+            'brand-light':   '#F5F0E4',
+          },
+          fontFamily: {
+            display: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans:    ['Montserrat', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { font-size: 62.5%; overflow-x: hidden; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #4B4B4B;
+      margin: 0;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, .footer-brand p, .section-title, .big-box h2, .small-text h2, .quality-text h2, .merch-text h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    /* ─── NAV ─── */
+    .site-nav { background: #1A1A1A; }
+    .nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 3.2rem;
+      height: 7.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo img {
+      height: 5.6rem;
+      width: auto;
+      filter: invert(1);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 3.2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.92);
+      text-decoration: none;
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: color 0.18s;
+    }
+    .nav-links a:hover { color: #fff; }
+    .nav-phone {
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .nav-phone:hover { opacity: 0.85; }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      min-height: 65rem;
+      background:
+        linear-gradient(105deg, rgba(5,5,5,0.97) 0%, rgba(20,20,20,0.9) 40%, rgba(40,40,40,0.65) 70%, rgba(60,60,60,0.3) 100%),
+        url('https://placehold.co/1920x900/2a2020/2a2020') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      opacity: 0.4;
+    }
+    .hero-triangle-bg {
+      position: absolute;
+      right: 4%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 58rem;
+      max-width: 50%;
+      opacity: 0.09;
+      filter: invert(1);
+      mix-blend-mode: screen;
+      clip-path: inset(17% 0 0 0);
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+    .hero-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 8rem 3.2rem;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-content { max-width: 62rem; }
+    .hero h1 {
+      font-size: 5.8rem;
+      font-weight: 800;
+      line-height: 1.05em;
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin: 0 0 2.4rem;
+      text-transform: uppercase;
+    }
+    .hero h1 span { color: #C4973A; }
+    .hero p {
+      font-size: 1.8rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.82);
+      margin: 0 0 3.6rem;
+      max-width: 50rem;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: #C4973A;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 1.6rem 3.6rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: #A37A26; transform: translateY(-1px); }
+    .btn-primary:active { transform: translateY(0); }
+    .hero-stats {
+      display: flex;
+      gap: 4.8rem;
+      margin-top: 5.6rem;
+    }
+    .stat-num {
+      font-size: 3.6rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 1.3rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 0.4rem;
+    }
+
+    /* ─── TRUSTED BY ─── */
+    .trusted {
+      background: #fff;
+      padding: 6.4rem 3.2rem;
+      text-align: center;
+    }
+    .trusted-label {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #54595F;
+      margin-bottom: 4rem;
+    }
+    .trusted-logos {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 4.8rem;
+    }
+    .trusted-logos img {
+      height: 3.6rem;
+      width: auto;
+      opacity: 0.45;
+      filter: grayscale(100%);
+      transition: opacity 0.2s;
+    }
+    .trusted-logos img:hover { opacity: 0.75; }
+
+    /* ─── SERVICES ─── */
+    .services {
+      background: #F5F0E4;
+      padding: 8rem 3.2rem;
+    }
+    .section-title {
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 1.2em;
+      color: #1A1A1A;
+      text-align: center;
+      margin: 0 0 1.6rem;
+    }
+    .section-sub {
+      font-size: 1.6rem;
+      color: #54595F;
+      text-align: center;
+      max-width: 56rem;
+      margin: 0 auto 5.6rem;
+      line-height: 1.6;
+    }
+    .services-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2.4rem;
+    }
+    .service-card {
+      background: #fff;
+      padding: 4rem 3.2rem;
+      text-align: center;
+      transition: box-shadow 0.25s;
+    }
+    .service-card:hover {
+      box-shadow: 0 8px 32px rgba(196,151,58,0.15), 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .service-icon {
+      width: 6.4rem;
+      height: 6.4rem;
+      margin: 0 auto 2.4rem;
+      background: #C4973A;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 2.6rem;
+    }
+    .service-card h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1A1A1A;
+      margin: 0 0 1.2rem;
+    }
+    .service-card p {
+      font-size: 1.4rem;
+      color: #54595F;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* ─── BIG/SMALL ─── */
+    .big-small {
+      position: relative;
+      background:
+        linear-gradient(rgba(10,10,10,0.88), rgba(10,10,10,0.88)),
+        url('https://placehold.co/1920x700/1a1212/221a1a') center/cover no-repeat;
+      padding: 9.6rem 3.2rem;
+    }
+    .big-small-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6.4rem;
+      align-items: center;
+    }
+    .big-box {
+      background: #C4973A;
+      padding: 5.6rem 4.8rem;
+    }
+    .big-box h2 {
+      font-size: 3.6rem;
+      font-weight: 800;
+      line-height: 1.15em;
+      color: #fff;
+      margin: 0 0 1.6rem;
+    }
+    .big-box h2 u { text-decoration-color: rgba(255,255,255,0.5); }
+    .big-box p {
+      font-size: 1.6rem;
+      color: rgba(255,255,255,0.78);
+      margin: 0;
+      line-height: 1.6;
+    }
+    .small-text h2 {
+      font-size: 3.6rem;
+      font-weight: 800;
+      line-height: 1.2em;
+      color: #fff;
+      font-style: italic;
+      margin: 0 0 2.4rem;
+    }
+    .small-text p {
+      font-size: 1.6rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ─── QUALITY ─── */
+    .quality {
+      background: #fff;
+      padding: 9.6rem 3.2rem;
+    }
+    .quality-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8rem;
+      align-items: center;
+    }
+    .quality-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .quality-text h2 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 1.25em;
+      color: #1A1A1A;
+      margin: 0 0 2.4rem;
+    }
+    .quality-text p {
+      font-size: 1.6rem;
+      color: #54595F;
+      line-height: 1.7;
+      margin: 0 0 3.6rem;
+    }
+
+    /* ─── BANNER ─── */
+    .blue-banner {
+      background: #1A1A1A;
+      padding: 9.6rem 3.2rem;
+      text-align: center;
+    }
+    .blue-banner h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 5.4rem;
+      font-weight: 700;
+      line-height: 1.15em;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin: 0 0 4rem;
+    }
+    .blue-banner h2 span { color: #C4973A; }
+    .btn-outline-white {
+      display: inline-block;
+      border: 2px solid #C4973A;
+      color: #C4973A;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 1.6rem 4.8rem;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-outline-white:hover { background: #C4973A; color: #fff; }
+
+    /* ─── MERCHANDISE ─── */
+    .merch {
+      background: #fff;
+      padding: 9.6rem 3.2rem;
+    }
+    .merch-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8rem;
+      align-items: center;
+    }
+    .merch-text h2 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 1.25em;
+      color: #1A1A1A;
+      margin: 0 0 2.4rem;
+    }
+    .merch-text h2 em {
+      font-style: italic;
+      color: #C4973A;
+    }
+    .merch-text p {
+      font-size: 1.6rem;
+      color: #54595F;
+      line-height: 1.7;
+      margin: 0 0 3.6rem;
+    }
+    .merch-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ─── FOOTER ─── */
+    .site-footer {
+      background: #1A1A1A;
+      color: #fff;
+      padding: 7.2rem 3.2rem 4rem;
+    }
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 1fr 1.2fr;
+      gap: 4.8rem;
+      margin-bottom: 5.6rem;
+    }
+    .footer-brand img {
+      height: 7.2rem;
+      width: auto;
+      filter: invert(1);
+      margin-bottom: 2rem;
+      display: block;
+    }
+    .footer-brand p {
+      font-size: 1.4rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+      margin: 0;
+    }
+    .footer-col h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin: 0 0 2rem;
+    }
+    .footer-col ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .footer-col ul li a {
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      font-size: 1.4rem;
+      transition: color 0.18s;
+    }
+    .footer-col ul li a:hover { color: #fff; }
+    .footer-col address {
+      font-style: normal;
+      font-size: 1.4rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+    }
+    .footer-col address a {
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      display: block;
+      transition: color 0.18s;
+    }
+    .footer-col address a:hover { color: #fff; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 3.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-copy {
+      font-size: 1.3rem;
+      color: rgba(255,255,255,0.35);
+    }
+    .footer-socials {
+      display: flex;
+      gap: 2rem;
+    }
+    .footer-socials a {
+      width: 3.6rem;
+      height: 3.6rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.5);
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .footer-socials a:hover { border-color: #fff; color: #fff; }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" style="font-family:'Playfair Display',Georgia,serif;font-size:2.2rem;font-weight:700;color:#fff;text-decoration:none;letter-spacing:-0.01em;">Magic Embroidery</a>
+      <ul class="nav-links">
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Company</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Request Quote</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <a href="tel:9101234567" class="nav-phone">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        (910) 123-4567
+      </a>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <img src="Brand%20Assets/2ae6fb96-4801-40db-91c4-267ac4d9e18f.JPG" class="hero-triangle-bg" alt="">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1>Crafted<br>with<br><span>Care</span></h1>
+        <p>Wilmington's premier custom embroidery studio. We bring your vision to life — stitch by stitch — with precision, passion, and pride in every piece.</p>
+        <a href="#" class="btn-primary">Get A Free Quote</a>
+        <div class="hero-stats">
+          <div>
+            <div class="stat-num">10K+</div>
+            <div class="stat-label">Happy Clients</div>
+          </div>
+          <div>
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Satisfaction Guaranteed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TRUSTED BY ═══ -->
+  <section class="trusted">
+    <p class="trusted-label">Trusted by Wilmington Businesses & Beyond</p>
+    <div class="trusted-logos">
+      <img src="https://amanecercocina.com/wp-content/uploads/2023/06/LOGO-AMANECER-300x159.png" alt="Amanecer Cocina & Café">
+      <img src="https://aztecmasonry.com/wp-content/uploads/2022/05/Logo-Aztec_HEADER.png" alt="Aztec Masonry">
+      <img src="https://placehold.co/160x44/cccccc/888888?text=Visiontech+NC" alt="Visiontech NC">
+    </div>
+  </section>
+
+  <!-- ═══ SERVICES ═══ -->
+  <section class="services">
+    <h2 class="section-title">What Does Your Order Need?</h2>
+    <p class="section-sub">From custom embroidery to screen printing, Magic Embroidery delivers high-quality work for businesses, teams, and organizations across the Cape Fear region.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+        </div>
+        <h3>Embroidery</h3>
+        <p>High-quality thread embroidery on hats, shirts, jackets, and more.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-2.18c.07-.44.18-.86.18-1.3C18 2.12 15.88 0 13.3 0c-1.3 0-2.5.54-3.36 1.4L12 4l-2.06 2.6C8.96 6.21 8 5.13 8 3.87c0-.97.43-1.87 1.12-2.5A4.7 4.7 0 0 0 6.7 0C4.12 0 2 2.12 2 4.7c0 .44.11.86.18 1.3H0v2h24V6h-4zM3.12 6c-.06-.21-.12-.44-.12-.7C3 3.21 4.71 1.5 6.7 1.5c.85 0 1.62.34 2.2.88L7 5.12A3.47 3.47 0 0 0 3.12 6zm7.88 0l1.76-2.72c.37-.24.8-.38 1.24-.38 1.22 0 2.18.88 2.18 2.1 0 .26-.06.49-.12.7L11 6h.0zM2 20c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9H2v11z"/></svg>
+        </div>
+        <h3>Screen Printing</h3>
+        <p>Vibrant, long-lasting prints on any garment or surface — any quantity.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+        </div>
+        <h3>Promotional Products</h3>
+        <p>Custom branded merchandise that makes an impression and drives awareness.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+        </div>
+        <h3>Custom Patches</h3>
+        <p>Iron-on, sew-on, and velcro patches — perfect for uniforms and apparel.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BIG ENOUGH / SMALL ENOUGH ═══ -->
+  <section class="big-small">
+    <div class="big-small-inner">
+      <div class="big-box">
+        <h2>We're <u>big enough</u> to handle your order</h2>
+        <p>Large runs, tight deadlines, complex designs — our facility and team deliver at scale without sacrificing quality.</p>
+      </div>
+      <div class="small-text">
+        <h2>...and small enough to care about every detail.</h2>
+        <p>Every order gets the hands-on attention it deserves. You're not a ticket number here — you're a partner, and we treat your brand like our own.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ QUALITY ═══ -->
+  <section class="quality">
+    <div class="quality-inner">
+      <div class="quality-img">
+        <img src="https://placehold.co/640x480/e8e8e8/aaaaaa?text=Expert+Staff+%26+State-of-the-Art+Facility" alt="Expert staff at work">
+      </div>
+      <div class="quality-text">
+        <h2>With our expert staff and state-of-the-art facility, you get the best quality for the best value, every time.</h2>
+        <p>Our team brings decades of combined experience to every order. We invest in industry-leading equipment so your design comes out sharp, accurate, and durable — consistently, at any scale.</p>
+        <a href="#" class="btn-primary">Learn More About Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BLUE BANNER ═══ -->
+  <section class="blue-banner">
+    <h2>Your Inspiration<br>Becomes <span>Reality</span></h2>
+    <a href="#" class="btn-outline-white">Get A Quote</a>
+  </section>
+
+  <!-- ═══ MERCHANDISE ═══ -->
+  <section class="merch">
+    <div class="merch-inner">
+      <div class="merch-text">
+        <h2>We create branded merchandise that <em>brings customers, teams, and communities together</em></h2>
+        <p>From small-batch custom orders to large-scale merchandise programs — we help brands of all sizes create apparel and products that tell their story and build real connections.</p>
+        <a href="#" class="btn-primary">Shop Products</a>
+      </div>
+      <div class="merch-img">
+        <img src="https://placehold.co/640x520/e0e0e0/999999?text=Custom+Embroidered+Products" alt="Custom embroidered merchandise">
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <p>Custom embroidery for Wilmington, NC and beyond. Think. Design. Create.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="#">Embroidery</a></li>
+            <li><a href="#">Screen Printing</a></li>
+            <li><a href="#">Promotional Products</a></li>
+            <li><a href="#">Custom Patches</a></li>
+            <li><a href="#">Heat Transfer</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Team</a></li>
+            <li><a href="#">Our Facility</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Art Guidelines</a></li>
+            <li><a href="#">Size Charts</a></li>
+            <li><a href="#">Request Quote</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <address>
+            <a href="tel:9101234567">(910) 123-4567</a>
+            <a href="mailto:info@magicembroidery.com">info@magicembroidery.com</a>
+            <span>Wilmington, NC</span>
+          </address>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025 Magic Embroidery. Wilmington, NC. All rights reserved.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">ig</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
